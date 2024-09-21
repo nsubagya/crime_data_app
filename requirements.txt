@@ -195,7 +195,7 @@ python-dotenv==1.0.1
 python-multipart==0.0.9
 pytz==2024.2
 PyWavelets==1.7.0
-pywin32==306
+pywin32>=300
 PyYAML==6.0.2
 pyzmq==26.2.0
 qpd==0.4.4
