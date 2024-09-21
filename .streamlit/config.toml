@@ -1,2 +1,6 @@
+[server]
+headless = true
+enableCORS = false
+
 [python]
 version = "3.11"
