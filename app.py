@@ -4,7 +4,7 @@ import pandas as pd
 import folium
 
 # Load the model
-model = load_model(r"https://github.com/nsubagya/crime_data_app/blob/main/final_model.pkl")
+model = load_model(r"https://github.com/nsubagya/crime_data_app/blob/main/final_model")
 
 # Load the data
 data_2023 = pd.read_csv(r"https://github.com/nsubagya/crime_data_app/blob/main/data_after_2023.csv")
