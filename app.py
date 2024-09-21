@@ -4,10 +4,10 @@ import pandas as pd
 import folium
 
 # Load the model
-model = load_model(r"https://github.com/nsubagya/crime_data_app/blob/main/final_model.pkl")
+model = load_model("final_model")
 
 # Load the data
-data_2023 = pd.read_csv(r"https://github.com/nsubagya/crime_data_app/blob/main/data_after_2023.csv")
+data_2023 = pd.read_csv("data_after_2023.csv")
 
 # Create a dictionary for crime codes and their descriptions
 crime_codes = dict(zip(data_2023['Crm Cd'], data_2023['Crm Cd Desc']))
