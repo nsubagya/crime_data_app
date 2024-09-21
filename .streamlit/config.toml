@@ -2,5 +2,12 @@
 headless = true
 enableCORS = false
 
+[theme]
+primaryColor = "#f39c12"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f5"
+textColor = "#000000"
+
 [python]
 version = "3.11"
+
