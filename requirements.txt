@@ -1,6 +1,6 @@
-streamlit==1.17.0
-pycaret==3.3.2
-pandas==1.5.3
-folium==0.14.0
-numpy==1.23.5
-scikit-learn==1.5.2
+streamlit
+pycaret
+pandas
+folium
+numpy
+scikit-learn
