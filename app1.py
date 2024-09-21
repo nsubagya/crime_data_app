@@ -4,10 +4,10 @@ import pandas as pd
 import folium
 
 # Load the model
-model = load_model("final_model")
+model = load_model(r"C:\Users\subag\Downloads\NY_Crime\final_model")
 
 # Load your data
-data_2023 = pd.read_csv("data_after_2023.csv")
+data_2023 = pd.read_csv("C:\\Users\\subag\\Downloads\\NY_Crime\\data_after_2023.csv")
 
 # Filter relevant data and compute mean coordinates
 area_coordinates = data_2023[['AREA', 'LAT', 'LON']].dropna(subset=['LAT', 'LON'])
@@ -82,7 +82,7 @@ if st.button('Predict'):
 
     # Store results
     if lat is not None and lon is not None:
-        st.session_state.results_list.append((predicted_area, lat, lon))
+        st.session_state.results_list.append((predicted_area, lat, lon, crm_cd))  # Include crm_cd
 
     # Display results
     st.write(f'Predicted AREA: {predicted_area}')
@@ -90,16 +90,15 @@ if st.button('Predict'):
 
 # Create a map and plot all markers
 if st.session_state.results_list:
-    # Initialize the map at the first result location
     first_lat, first_lon = st.session_state.results_list[0][1:3]
     m = folium.Map(location=[first_lat, first_lon], zoom_start=12)
 
     # Add markers to the map for all predictions
-    for predicted_area, lat, lon in st.session_state.results_list:
+    for predicted_area, lat, lon, crm_cd in st.session_state.results_list:
         folium.Marker(
             location=[lat, lon],
-            popup=f'Predicted Area: {predicted_area}',
-            tooltip=f'Predicted Area: {predicted_area}'  # Tooltip for hover
+            popup=f'Predicted Area: {predicted_area}<br>Crime Code: {crm_cd}',
+            tooltip=f'Area: {predicted_area}, Crime Code: {crm_cd}'  
         ).add_to(m)
 
     st.write('Map of the Predicted Locations:')
