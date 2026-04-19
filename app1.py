@@ -4,10 +4,10 @@ import pandas as pd
 import folium
 
 # Load the model
-model = load_model(r"C:\Users\subag\Downloads\NY_Crime\final_model")
+model = load_model("final_model")
 
 # Load your data
-data_2023 = pd.read_csv("C:\\Users\\subag\\Downloads\\NY_Crime\\data_after_2023.csv")
+data_2023 = pd.read_csv("data_after_2023.csv")
 
 # Filter relevant data and compute mean coordinates
 area_coordinates = data_2023[['AREA', 'LAT', 'LON']].dropna(subset=['LAT', 'LON'])
